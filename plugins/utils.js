@@ -1,14 +1,20 @@
-async function readBody(stream) {
-  return new Promise((resolve, rejects) => {
-    let res = ''
-    stream.on('data', data => {
-      res += data
-    })
+const Stream = require('stream')
 
-    stream.on('end', () => {
-      resolve(res)
+async function readBody(stream) {
+  if(stream instanceof Stream) { // carful buffer
+    return new Promise((resolve, reject) => {
+      let res = ''
+      stream.on('data', data => {
+        res += data
+      })
+  
+      stream.on('end', () => {
+        resolve(res)
+      })
     })
-  })
+  } else {
+    return stream.toString()
+  }
 }
 
 exports.readBody = readBody
