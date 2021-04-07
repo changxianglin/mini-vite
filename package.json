@@ -4,7 +4,7 @@
   "description": "a simple vite learn about vite principle.",
   "main": "index.js",
   "bin": {
-    "mini-vite": "./bin/www.js"
+    "mini-vite": "bin/www.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,13 +14,13 @@
     "url": "git+https://github.com/changxianglin/mini-vite.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "xianglin <281532612@qq.com> (http://zhourong.host/)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/changxianglin/mini-vite/issues"
   },
   "homepage": "https://github.com/changxianglin/mini-vite#readme",
-  "dependencies": {
+  "devDependencies": {
     "es-module-lexer": "^0.4.1",
     "koa": "^2.13.1",
     "koa-static": "^5.0.0",

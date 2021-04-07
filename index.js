@@ -1,21 +1,30 @@
 const Koa = require('koa')
-const {　serveStaticPlugin　} = require('./plugins/serverPluginServerStatic')
+const { serverStaticPlugin } = require('./plugins/serverPluginServerStatic')
+const { moduleRewritePlugin } = require('./plugins/serverPluginModuleRewrite.js')
+const { moduleResolvePlugin } = require('./plugins/serverPluginModuleResolvePlugin.js')
+
 function createServer() {
-  const app = new Koa() // create koa instance
-  const root = process.cwd() // current project path
-  console.log(root)
+  const app = new Koa()
+  const root = process.cwd()
+
   const context = {
-    app,
+    app, 
     root,
   }
 
-  // pulgins
-  const resolvePlugins = [
-    // 1. static server
-    serveStaticPlugin
+  const resolvedPlugins = [
+    // 2.anliys import add path
+    moduleRewritePlugin,
+
+    // 3.anliys /@modules files start result
+    moduleResolvePlugin,
+    
+
+    // 1.static server
+    serverStaticPlugin,
   ]
 
-  resolvePlugins.forEach(plugin =>　plugin(context))
+  resolvedPlugins.forEach(plugin => plugin(context))
 
   return app
 }

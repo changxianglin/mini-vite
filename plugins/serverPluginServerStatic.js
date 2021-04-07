@@ -1,10 +1,9 @@
 const static = require('koa-static')
 const path = require('path')
 
-function serveStaticPlugin({ app, root }) {
-  app.use(static(root))
-  // public
+function serverStaticPlugin({app, root}) {
+  app.use(static('.'))
   app.use(static(path.join(root, 'public')))
 }
 
-exports.serveStaticPlugin = serveStaticPlugin
+exports.serverStaticPlugin = serverStaticPlugin
