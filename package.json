@@ -1,0 +1,29 @@
+{
+  "name": "mini-vite",
+  "version": "1.0.0",
+  "description": "a simple vite learn about vite principle.",
+  "main": "index.js",
+  "bin": {
+    "mini-vite": "./bin/www.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/changxianglin/mini-vite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/changxianglin/mini-vite/issues"
+  },
+  "homepage": "https://github.com/changxianglin/mini-vite#readme",
+  "dependencies": {
+    "es-module-lexer": "^0.4.1",
+    "koa": "^2.13.1",
+    "koa-static": "^5.0.0",
+    "magic-string": "^0.25.7"
+  }
+}
