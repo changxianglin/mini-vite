@@ -5,6 +5,6 @@
 // 创建一个 koa 服务
 const createServer = require('../index.js')
 
-createServer().listen(4000, () => {
-  console.log('server start 4000 ', 'http://localhost:4000')
+createServer().listen(5000, () => {
+  console.log('server start 5000 ', 'http://localhost:5000')
 })

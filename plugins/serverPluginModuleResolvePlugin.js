@@ -42,6 +42,7 @@ function moduleResolvePlugin({app, root}) {
     ctx.type = 'js'
 
     // load vue
+    console.log('每次添加的 id', id)
     const content = await fs.readFile(vueResolved[id], 'utf8')
 
     ctx.body = content // back 
